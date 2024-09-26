@@ -18,24 +18,38 @@ textoVerde.textContent = verde;
 textoAzul.textContent = azul;
 
 // Función para actualizar el color de fondo de la página.
-function actualizarColor(rojo, verde, azul) {
-  // Completa esta función para cambiar el color de fondo.
+function actualizarColor() {
+  // Obtiene los valores actuales de los inputs
+  rojo = inputRojo.value;
+  verde = inputVerde.value;
+  azul = inputAzul.value;
+
+  // Cambia el color de fondo usando los valores RGB
+  document.body.style.backgroundColor = `rgb(${rojo}, ${verde}, ${azul})`;
+
+  // Actualiza los textos que muestran los valores actuales
+  textoRojo.textContent = rojo;
+  textoVerde.textContent = verde;
+  textoAzul.textContent = azul;
 }
 
 // Agrega un event listener para el input de Rojo.
-inputRojo.addEventListener('change', (e) => {
+inputRojo.addEventListener('input', (e) => {
   // Actualiza el valor de la variable y el texto.
-  // Llama a la función para actualizar el color de fondo.
+  actualizarColor();
 });
 
 // Agrega un event listener para el input de Verde.
-inputVerde.addEventListener('change', (e) => {
+inputVerde.addEventListener('input', (e) => {
   // Actualiza el valor de la variable y el texto.
-  // Llama a la función para actualizar el color de fondo.
+  actualizarColor();
 });
 
 // Agrega un event listener para el input de Azul.
-inputAzul.addEventListener('change', (e) => {
+inputAzul.addEventListener('input', (e) => {
   // Actualiza el valor de la variable y el texto.
-  // Llama a la función para actualizar el color de fondo.
+  actualizarColor();
 });
+
+// Inicializa el color de fondo al cargar la página
+actualizarColor();
